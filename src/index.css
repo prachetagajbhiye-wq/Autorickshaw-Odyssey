@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('@fontsource/plus-jakarta-sans/700.css');
+@import url('@fontsource/plus-jakarta-sans/400.css');
+@import url('@fontsource/plus-jakarta-sans/600.css');
+
+@layer base {
+  :root {
+    --background: 220 15% 6%;
+    --foreground: 45 10% 92%;
+
+    --card: 220 15% 10%;
+    --card-foreground: 45 10% 92%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 45 10% 92%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 220 15% 6%;
+
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 45 10% 92%;
+
+    --muted: 220 10% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 220 15% 6%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Game-specific tokens */
+    --rickshaw-yellow: 45 100% 50%;
+    --road-dark: 220 15% 10%;
+    --neon-cyan: 190 100% 50%;
+    --danger-red: 0 100% 60%;
+    --health-green: 142 76% 56%;
+    --glass: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+
+    --shadow-game: 0 0 0 1px hsla(45, 100%, 50%, 0.1), 0 4px 6px -1px rgba(0,0,0,0.2), 0 10px 15px -3px rgba(0,0,0,0.3);
+
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 45 10% 92%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 220 15% 6%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 45 10% 92%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: hsla(var(--glass));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-game);
+    border-radius: var(--radius);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+  }
+
+  .game-title {
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+
+  .ctrl-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: hsla(var(--glass));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    color: hsl(var(--foreground));
+    font-size: 24px;
+    border: 1px solid hsla(var(--glass-border));
+    transition: transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ctrl-btn:active {
+    transform: scale(0.9);
+  }
+
+  .action-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: hsla(45, 100%, 50%, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--primary));
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4), 0 0 20px hsla(45, 100%, 50%, 0.15);
+    color: hsl(var(--primary));
+    font-size: 24px;
+    transition: transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .action-btn:active {
+    transform: scale(0.9);
+  }
+
+  .notification-toast {
+    animation: slideUp 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), fadeOut 0.3s ease 1.7s forwards;
+  }
+
+  .screen-shake {
+    animation: shake 0.3s ease-in-out;
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px hsla(45, 100%, 50%, 0.3); }
+  50% { box-shadow: 0 0 25px hsla(45, 100%, 50%, 0.6); }
+}
