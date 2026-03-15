@@ -4,7 +4,7 @@ Autorickshaw Odyssey is a browser-based driving game inspired by the chaotic str
 
 This document explains how to run the project and understand the available gameplay options.
 
----
+
 
 📁 Project Structure
 
@@ -21,7 +21,7 @@ project-folder
 │
 └── game.js
 
----
+
 
 ▶️ Running the Frontend
 
@@ -50,7 +50,7 @@ To test the responsive design:
 2. Enable the Device Toolbar.
 3. Select different mobile devices to simulate mobile gameplay.
 
----
+
 
 ⚙️ Running the Backend
 
@@ -77,7 +77,7 @@ After the server starts successfully, it will run locally at:
 
 http://localhost:3000
 
----
+
 
 🎮 Gameplay Overview
 
@@ -91,7 +91,7 @@ During gameplay, the following metrics update dynamically:
 - Coins collected
 - Player health
 
----
+
 
 🎛 Main Menu Options
 
@@ -105,7 +105,7 @@ Starts the game with the selected vehicle and map settings.
 
 Displays the top scores achieved by players. This feature is connected to the backend and allows tracking of high scores.
 
----
+
 
 🚗 Vehicle Selection
 
@@ -133,7 +133,7 @@ Better for handling heavier traffic conditions.
 
 Each vehicle may have different speed, handling, and durability values, which influence gameplay difficulty and strategy.
 
----
+
 
 🗺 Map Selection
 
@@ -157,7 +157,7 @@ Rainy weather conditions with slippery roads, making driving more difficult.
 
 Each map changes the traffic density, road width, and environmental difficulty.
 
----
+
 
 🎮 Player Controls
 
@@ -169,4 +169,74 @@ Shifts the vehicle to the left lane to avoid traffic or collect coins.
 
 Move Right
 
-Moves the vehicle to t
+Moves the vehicle to the right lane.
+
+Boost
+
+Temporarily increases the vehicle's speed to cover distance faster or escape obstacles.
+
+Honk
+
+Activates the vehicle horn, adding interaction and realism to the driving experience.
+
+
+
+📊 Game Status Indicators
+
+Several indicators update in real time during gameplay.
+
+Distance
+
+Displays how far the player has traveled during the current run.
+
+Coins
+
+Shows the number of coins collected.
+
+Health
+
+Represents the vehicle’s condition. Collisions or obstacles may reduce health.
+
+If health reaches zero, the ride ends.
+
+
+
+⚙️ Game Logic
+
+The main gameplay mechanics are implemented in:
+
+game.js
+
+This file controls:
+
+- Vehicle movement
+- Coin collection
+- Health system
+- Score updates
+- Environment generation
+
+
+
+🚧 Planned Improvements
+
+Future updates to the project may include:
+
+- Procedural city chunk generation for endless gameplay
+- Dynamic obstacles such as traffic vehicles or barriers
+- Improved collision detection
+- Enhanced leaderboard system
+- Additional vehicles and maps
+
+
+
+📌 Summary
+
+To run the project:
+
+1. Open frontend/index.html using Live Server or a browser.
+2. Navigate to the backend folder.
+3. Install dependencies using "npm install".
+4. Start the server using "npm start".
+5. Access the backend at http://localhost:3000.
+
+Once everything is running, you can select a vehicle, choose a map, and start your ride through Mumbai traffic.
